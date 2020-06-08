@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <h1>Signup Page</h1>
-        <v-form>
+        <v-form ref="signUpForm" v-model="formValidity">
           <v-text-field
             label="Email"
             type="email"
@@ -43,6 +43,7 @@ export default {
       birthday: '',
       browsers: ['Chrome', 'Firefox', 'Safari', 'Edge', 'Brave'],
       agreeToTerms: false,
+      formValidity: false,
       agreeToTermsRules: [
         (value) =>
           !!value ||
